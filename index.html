@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>My Marvel Directory</h1>
-	<div>
+	<div class="center">
 		<button class="btn" data-letter="a">A</button>
 		<button class="btn" data-letter="b">B</button>
 		<button class="btn" data-letter="c">C</button>
@@ -41,31 +41,40 @@
 
 	</div>
 
-	<div>
+	
 
-		<section class="container">
-
+	<section class="container">
+		<!-- ajout id test-list pour la pagination -->
+		<div id="test-list">
 			<table class="table">
 				<thead>
-					<th>Id</th>
-					<th>Thumbnail</th>
-					<th>Name</th>
-					<th>Description</th>
-					<th>Comics</th>
-					<th>Stories</th>
-					<th>Series</th>
+					<tr>
+						<th>Id</th>
+						<th>Thumbnail</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Comics</th>
+						<th>Stories</th>
+						<th>Series</th>
+					</tr>
 				</thead>
 
-
-				<tbody  class="donnees">
+				<!-- class list pour la pagination -->
+				<tbody  class="donnees list" id="donnees">
 				</tbody>	
+
 			</table>
-
-
+			<!-- <div> avec <ul> là où on veut la pagination -->
+			<div><ul class="pagination"></ul></div>
 		</div>
+	</section>
 
-		<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-		<script type="text/javascript" src="node_modules/list.js/dist/list.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-	</body>
-	</html>
+
+	
+
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<!-- link vers list.js pour la pagination -->
+	<script type="text/javascript" src="node_modules/list.js/dist/list.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
