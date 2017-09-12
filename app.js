@@ -1,10 +1,10 @@
-// function qu'on appelera lors du clic sur une lettre
+
  function getHeroes(lettre) {
 //requete ajax 
   $.ajax ({
 //url avec limit=100 pour avoir 100 noms +  nameStartsWith=
     url : "http://gateway.marvel.com/v1/public/characters?nameStartsWith=" + 
-    lettre + "&limit=100&ts=10&apikey= =b5e59d3db4400c5d47a0e41d6fe41c61",
+    lettre + "&limit=100&ts=10&apikey=",
 
     success : function(data) {
 // stockage du tableau des personnages dans une variable
@@ -25,7 +25,7 @@
         var html = "";
 //ajout dans le html (tbody .donnees) des éléments récupéres dans un tableau
         $('.donnees').append(
-          html += "<tr>\
+          html += "<tr class='name'>\
           <td>" + id + "</td>\
           <td><img src='" + path + "." + extension + "'/></td>\
           <td>" + name + "</td>\
@@ -35,7 +35,19 @@
           <td>" + series + "</td>\
           </tr>");
 
+
+
     } // fin boucle for
+
+  new List('test-list', {
+  valueNames: ['name'],
+  page: 5,
+  pagination: [{
+    outerWindow : 2,
+    innerWindow : 2
+  }]
+});
+    
     } // fin success
   }); // fin requete Ajax
 } // fin fonction
@@ -48,4 +60,6 @@ $('.btn').click(function() {
   $('.donnees').empty();
 //remplissage du tableau via la fonction getHeroes
   getHeroes(lettre);
+
+  
 });
